@@ -20,6 +20,39 @@
     $( "#draggable" ).draggable();
   } );
   </script>
+  <script>
+  $( function() {
+    // run the currently selected draggable
+    function runEffect() {
+      // get draggable type from
+      var selectedEffect = $( "#effectTypes" ).val();
+ 
+      // Most draggable types need no options passed by default
+      var options = {};
+      // some draggable have required parameters
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 50 };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 200, height: 60 } };
+      }
+ 
+      // Run the draggable
+      $( "#draggable" ).hide( selectedEffect, options, 1000, callback );
+    };
+ 
+    // Callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( "#draggable" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+    };
+ 
+    // Set draggable from select menu value
+    $( "#button" ).on( "click", function() {
+      runEffect();
+    });
+  } );
+  </script>
 </head>
 <body>
  
@@ -27,7 +60,7 @@
           <button class="exit" onclick="removeElement()" style=" float: right; background-color: #f44336;">X</button>
         <button class="min" onclick="changeVisibility()" style=" float: right; background-color: #b3d9ff;" >-</button>
   <p class="words" >Internet</p>
-  <iframe class="guugle" src="https://gabecorrcode.github.io/Index2.html"></iframe>
+  <iframe id="guugle" src="https://gabecorrcode.github.io/Index2.html"></iframe>
 </div>
  
  
