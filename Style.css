@@ -5,3 +5,8 @@ body {
 .words {
   float: top;
 }
+
+.google {
+	width: 800px;
+	height: 400px;
+}
