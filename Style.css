@@ -10,3 +10,11 @@ body {
 	width: 800px;
 	height: 400px;
 }
+
+		  #draggable {
+		  width: 800px; height: 450px; padding: 0.2em; 
+		  }
+			.ui-widget-content {
+			font-size: 30px;
+			background-color: #b3d9ff;
+		}
